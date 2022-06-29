@@ -19,3 +19,5 @@ v16.13.2
 ==> yarn rw dev
 
 ==> yarn rw generate page Home /
+
+==> yarn rw generate page About
