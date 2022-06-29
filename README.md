@@ -16,8 +16,12 @@ v16.13.2
 
 ==> yarn create redwood-app offside-ai
 
+==> cd offside-ai
+
 ==> yarn rw dev
 
 ==> yarn rw generate page Home /
 
 ==> yarn rw generate page About
+
+==> yarn rw generate layout offsidelayout
