@@ -15,6 +15,7 @@ import HomePage from './pages/HomePage/HomePage'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/team" page={TeamPage} name="team" />
       <Set wrap={OffsidelayoutLayout}>
       <Route path="/about" page={AboutPage} name="about" />
       <Route path="/" page={HomePage} name="home" />
