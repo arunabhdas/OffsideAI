@@ -27,3 +27,10 @@ v16.13.2
 ==> yarn rw generate layout offsidelayout
 
 ==> yarn rw prisma migrate dev
+
+
+```
+Getting Tailwind working with Redwood
+
+https://mdv.io/tailwindcss-in-redwoodjs
+```
