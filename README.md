@@ -1,10 +1,7 @@
-# offside-ai
-Offside AI
+# OffsideAI
 
-# offside-ai
-Offside AI
 
-## Info
+## Usage
 
 ```
 ==> yarn rw info
