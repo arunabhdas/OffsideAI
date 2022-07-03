@@ -53,6 +53,7 @@ v16.13.2
 ==> yarn redwood generate page team
 
 
+
 ```
 Getting Tailwind working with Redwood
 
