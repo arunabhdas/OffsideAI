@@ -1,5 +1,6 @@
 # OffsideAI
 
+* Open Source PropTech / VentureTech CRM powered by blockchain and smart contracts
 
 ## Usage
 
