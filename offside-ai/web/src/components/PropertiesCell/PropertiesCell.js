@@ -1,6 +1,6 @@
 export const QUERY = gql`
   query PropertiesQuery {
-    properties {
+    properties: listings {
       id
     }
   }
