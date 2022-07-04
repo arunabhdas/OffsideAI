@@ -61,6 +61,21 @@ v16.13.2
 
 ==> yarn redwood generate page team
 
+* Create model Listing
+```
+model Listing {
+  id Int @id @default(autoincrement())
+  title String 
+  description String
+  createdAt DateTime @default(now())
+}
+```
+* Run scaffold for Listing
+
+```
+==> yarn rw g scaffold Listing
+```
+
 
 
 ```
