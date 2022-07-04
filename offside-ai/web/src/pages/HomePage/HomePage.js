@@ -6,7 +6,7 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" description="Home page" />
 
-      <>Home
+      <>Welcome to OffsideAI
       </>
     </>
   )
