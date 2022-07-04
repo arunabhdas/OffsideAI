@@ -66,6 +66,8 @@ v16.13.2
 ==> yarn rw storybook
 
 ==> yarn redwood generate page team
+
+
 ```
 
 * Create model Listing
@@ -81,6 +83,8 @@ model Listing {
 
 ```
 ==> yarn rw g scaffold listing
+
+==> yarn rw g cell Property
 ```
 
 
