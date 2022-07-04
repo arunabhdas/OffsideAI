@@ -76,7 +76,7 @@ model Listing {
 * Run scaffold for Listing
 
 ```
-==> yarn rw g scaffold Listing
+==> yarn rw g scaffold listing
 ```
 
 
