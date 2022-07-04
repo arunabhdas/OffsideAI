@@ -122,4 +122,4 @@ export type CreateListingMutation = { __typename?: 'Mutation', createListing: { 
 export type PropertiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PropertiesQuery = { __typename?: 'Query', properties: Array<{ __typename?: 'Listing', id: number }> };
+export type PropertiesQuery = { __typename?: 'Query', properties: Array<{ __typename?: 'Listing', id: number, title: string, description: string, createdAt: string }> };

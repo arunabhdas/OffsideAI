@@ -1,7 +1,10 @@
 export const QUERY = gql`
   query PropertiesQuery {
     properties: listings {
-      id
+      id,
+      title,
+      description,
+      createdAt
     }
   }
 `
@@ -15,11 +18,13 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ properties }) => {
-  return (
-    <ul>
-      {properties.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
-      })}
-    </ul>
-  )
+  return properties.map((property) => (
+        <article key={property.id}>
+          <header>
+            <h2>{property.title}</h2>
+          </header>
+          <p>{property.body}</p>
+          <div>Posted at: {property.createdAt}</div>
+        </article>
+    ))
 }

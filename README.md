@@ -12,7 +12,7 @@
 
 ## Screenshots
 
-![Screenshot_1](https://raw.githubusercontent.com/arunabhdas/OffsideAI/main/screenshots/screenshot_1.png?token=GHSAT0AAAAAABVEUTIFQ4L3RAKLI2EJ5TYKYWCNUCA)
+![Screenshot_1](https://raw.githubusercontent.com/arunabhdas/OffsideAI/main/screenshots/screenshot_1.png)
 
 ## Usage
 
@@ -84,7 +84,7 @@ model Listing {
 ```
 ==> yarn rw g scaffold listing
 
-==> yarn rw g cell Property
+==> yarn rw g cell Properties
 ```
 
 
@@ -93,4 +93,11 @@ model Listing {
 Getting Tailwind working with Redwood
 
 https://mdv.io/tailwindcss-in-redwoodjs
+
+https://mdv.io/tailwindcss-in-redwoodjs
+
+npm install -D tailwindcss postcss autoprefixer
+
+==> yarn rw --version
+2.0.0
 ```
