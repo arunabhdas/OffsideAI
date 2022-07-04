@@ -12,7 +12,7 @@
 
 ## Screenshots
 
-(Screenshot_1)[https://raw.githubusercontent.com/arunabhdas/OffsideAI/main/screenshots/screenshot_1.png]
+![Screenshot_1](https://raw.githubusercontent.com/arunabhdas/OffsideAI/main/screenshots/screenshot_1.png)
 
 ## Usage
 
