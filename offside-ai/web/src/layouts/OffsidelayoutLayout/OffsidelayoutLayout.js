@@ -7,7 +7,9 @@ const OffsidelayoutLayout = ({ children }) => {
         <nav>
           <ul>
           <li>
-              <Link to={routes.home()}>Home</Link> | <Link to={routes.about()}>About</Link>
+              <Link to={routes.home()}>Home</Link> | 
+              <Link to={routes.listings()}>Listings</Link> | 
+              <Link to={routes.about()}>About</Link>
             </li>
             <li>
               
