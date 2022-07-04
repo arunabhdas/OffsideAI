@@ -1,6 +1,6 @@
 # OffsideAI
 
-* OffsideAI is an Open Source PropTech / VentureTech CRM powered by blockchain and smart contracts
+* OffsideAI is an Open Source NoCode, PropTech, VentureTech CRM Platform powered by blockchain and smart contracts
 
 * OffsideI allows for real-estate listings directly without going through a broker or agent
 
@@ -8,7 +8,7 @@
 
 * OffsideAI allows fractional investments in real-estate through the app
 
-* OffsideAI is powered by blockchain 
+* OffsideAI is powered using Web3.0 technologies including integrations with MetaMask
 
 ## Screenshots
 
