@@ -85,6 +85,8 @@ model Listing {
 ==> yarn rw g scaffold listing
 
 ==> yarn rw g cell Properties
+
+==> yarn rw g page Property
 ```
 
 

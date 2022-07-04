@@ -13,10 +13,13 @@ import ListingsLayout from 'src/layouts/ListingsLayout'
 import OffsidelayoutLayout from './layouts/OffsidelayoutLayout/OffsidelayoutLayout'
 import AboutPage from './pages/AboutPage/AboutPage'
 import HomePage from './pages/HomePage/HomePage'
+import PropertyPage from './pages/PropertyPage/PropertyPage'
 
 const Routes = () => {
   return (
     <Router>
+      <Route path="/property" page={PropertyPage} name="property" />
+      <Route path="/property/{id}" page={PropertyPage} name="property" />
       <Set wrap={ListingsLayout}>
         <Route path="/listings/new" page={ListingNewListingPage} name="newListing" />
         <Route path="/listings/{id:Int}/edit" page={ListingEditListingPage} name="editListing" />
