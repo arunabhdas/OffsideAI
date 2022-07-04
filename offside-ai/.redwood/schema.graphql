@@ -9,6 +9,11 @@ directive @skipAuth on FIELD_DEFINITION
 
 scalar BigInt
 
+input CreateListingInput {
+  description: String!
+  title: String!
+}
+
 scalar Date
 
 scalar DateTime
@@ -17,7 +22,22 @@ scalar JSON
 
 scalar JSONObject
 
+type Listing {
+  createdAt: DateTime!
+  description: String!
+  id: Int!
+  title: String!
+}
+
+type Mutation {
+  createListing(input: CreateListingInput!): Listing!
+  deleteListing(id: Int!): Listing!
+  updateListing(id: Int!, input: UpdateListingInput!): Listing!
+}
+
 type Query {
+  listing(id: Int!): Listing
+  listings: [Listing!]!
   redwood: Redwood
 }
 
@@ -28,3 +48,8 @@ type Redwood {
 }
 
 scalar Time
+
+input UpdateListingInput {
+  description: String
+  title: String
+}

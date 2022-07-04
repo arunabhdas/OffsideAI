@@ -10,6 +10,7 @@ export type ResolverFn<TResult, TParent, TContext, TArgs> = (
       args?: TArgs,
       obj?: { root: TParent; context: TContext; info: GraphQLResolveInfo }
     ) => Promise<Partial<TResult>> | Partial<TResult>;
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -25,9 +26,52 @@ export type Scalars = {
   Time: string;
 };
 
+export type CreateListingInput = {
+  description: Scalars['String'];
+  title: Scalars['String'];
+};
+
+export type Listing = {
+  __typename?: 'Listing';
+  createdAt: Scalars['DateTime'];
+  description: Scalars['String'];
+  id: Scalars['Int'];
+  title: Scalars['String'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createListing: Listing;
+  deleteListing: Listing;
+  updateListing: Listing;
+};
+
+
+export type MutationcreateListingArgs = {
+  input: CreateListingInput;
+};
+
+
+export type MutationdeleteListingArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type MutationupdateListingArgs = {
+  id: Scalars['Int'];
+  input: UpdateListingInput;
+};
+
 export type Query = {
   __typename?: 'Query';
+  listing?: Maybe<Listing>;
+  listings: Array<Listing>;
   redwood?: Maybe<Redwood>;
+};
+
+
+export type QuerylistingArgs = {
+  id: Scalars['Int'];
 };
 
 export type Redwood = {
@@ -35,6 +79,11 @@ export type Redwood = {
   currentUser?: Maybe<Scalars['JSON']>;
   prismaVersion?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['String']>;
+};
+
+export type UpdateListingInput = {
+  description?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -97,28 +146,38 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   BigInt: ResolverTypeWrapper<Scalars['BigInt']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  CreateListingInput: CreateListingInput;
   Date: ResolverTypeWrapper<Scalars['Date']>;
   DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
   JSON: ResolverTypeWrapper<Scalars['JSON']>;
   JSONObject: ResolverTypeWrapper<Scalars['JSONObject']>;
+  Listing: ResolverTypeWrapper<PrismaListing>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   Redwood: ResolverTypeWrapper<Redwood>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Time: ResolverTypeWrapper<Scalars['Time']>;
+  UpdateListingInput: UpdateListingInput;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   BigInt: Scalars['BigInt'];
   Boolean: Scalars['Boolean'];
+  CreateListingInput: CreateListingInput;
   Date: Scalars['Date'];
   DateTime: Scalars['DateTime'];
+  Int: Scalars['Int'];
   JSON: Scalars['JSON'];
   JSONObject: Scalars['JSONObject'];
+  Listing: PrismaListing;
+  Mutation: {};
   Query: {};
   Redwood: Redwood;
   String: Scalars['String'];
   Time: Scalars['Time'];
+  UpdateListingInput: UpdateListingInput;
 };
 
 export type requireAuthDirectiveArgs = {
@@ -151,7 +210,23 @@ export interface JSONObjectScalarConfig extends GraphQLScalarTypeConfig<Resolver
   name: 'JSONObject';
 }
 
+export type ListingResolvers<ContextType = RedwoodGraphQLContext, ParentType extends ResolversParentTypes['Listing'] = ResolversParentTypes['Listing']> = {
+  createdAt?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = RedwoodGraphQLContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  createListing?: Resolver<ResolversTypes['Listing'], ParentType, ContextType, RequireFields<MutationcreateListingArgs, 'input'>>;
+  deleteListing?: Resolver<ResolversTypes['Listing'], ParentType, ContextType, RequireFields<MutationdeleteListingArgs, 'id'>>;
+  updateListing?: Resolver<ResolversTypes['Listing'], ParentType, ContextType, RequireFields<MutationupdateListingArgs, 'id' | 'input'>>;
+};
+
 export type QueryResolvers<ContextType = RedwoodGraphQLContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  listing?: Resolver<Maybe<ResolversTypes['Listing']>, ParentType, ContextType, RequireFields<QuerylistingArgs, 'id'>>;
+  listings?: Resolver<Array<ResolversTypes['Listing']>, ParentType, ContextType>;
   redwood?: Resolver<Maybe<ResolversTypes['Redwood']>, ParentType, ContextType>;
 };
 
@@ -172,6 +247,8 @@ export type Resolvers<ContextType = RedwoodGraphQLContext> = {
   DateTime?: GraphQLScalarType;
   JSON?: GraphQLScalarType;
   JSONObject?: GraphQLScalarType;
+  Listing?: ListingResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Redwood?: RedwoodResolvers<ContextType>;
   Time?: GraphQLScalarType;

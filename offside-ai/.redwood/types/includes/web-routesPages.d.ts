@@ -4,6 +4,10 @@ import FatalErrorPageType from '/Users/coder/repos/arunabhdas/githubrepos/offsid
 import HomePageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/HomePage/HomePage'
 import NotFoundPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/NotFoundPage/NotFoundPage'
 import TeamPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/TeamPage/TeamPage'
+import ListingEditListingPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/Listing/EditListingPage/EditListingPage'
+import ListingListingPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/Listing/ListingPage/ListingPage'
+import ListingListingsPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/Listing/ListingsPage/ListingsPage'
+import ListingNewListingPageType from '/Users/coder/repos/arunabhdas/githubrepos/offside-ai/offside-ai/web/src/pages/Listing/NewListingPage/NewListingPage'
 
 declare global {
   const AboutPage: typeof AboutPageType
@@ -11,4 +15,8 @@ declare global {
   const HomePage: typeof HomePageType
   const NotFoundPage: typeof NotFoundPageType
   const TeamPage: typeof TeamPageType
+  const ListingEditListingPage: typeof ListingEditListingPageType
+  const ListingListingPage: typeof ListingListingPageType
+  const ListingListingsPage: typeof ListingListingsPageType
+  const ListingNewListingPage: typeof ListingNewListingPageType
 }
