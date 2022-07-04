@@ -35,6 +35,8 @@
 
 ## Steps
 
+* Bootstrap
+```
 ==> node -v
 v16.13.2
 
@@ -60,6 +62,7 @@ v16.13.2
 ==> yarn rw storybook
 
 ==> yarn redwood generate page team
+```
 
 * Create model Listing
 ```
